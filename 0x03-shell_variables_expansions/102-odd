@@ -1,1 +1,2 @@
 #!/bin/bash
+cat | awk 'NR%2'
