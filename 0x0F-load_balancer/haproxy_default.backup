@@ -1,0 +1,17 @@
+
+defaults
+  mode http
+  timeout client 15s
+  timeout connect 10s
+  timeout server 15s
+  timeout http-request 10s
+
+frontend i-bottech-tech-frontend
+    bind *:80
+    default_backend i-bottech-tech-backend
+
+backend i-bottech-tech-backend
+    balance roundrobin
+    server 147386-web-01 54.237.104.101:80 check
+    server 147386-web-02 100.25.16.145:80 check
+
